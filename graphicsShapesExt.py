@@ -34,22 +34,22 @@ class Shape():
         self.color = color
         self.__draw__()
         
-        
-class CircleShape(Shape):
+class Round(Shape) :
 
-    def __init__(self, canvas, pos, rad, color):
-        Shape.__init__(self, canvas, pos)
-        self.color = color
-        self.size = rad
+    def __init__(self,canvas,pos,size,color):
+        Shape.__init__(self,canvas ,pos)
+        self.size=size
+        self.color=color
         self.__draw__()
 
     def __draw__(self):
         x1,y1 = self.x-self.size, self.y-self.size
         x2,y2 = self.x+self.size, self.y+self.size
-        i1 = self.c.create_oval(x1,y1,x2,y2,fill=self.color)
-        self.items.append(i1)
+        c1 = self.c.create_oval(x1,y1,x2,y2,fill=self.color)
+        self.items.append(c1)
 
-        
+
+
 ################################################## MAIN ###        
 if __name__ == '__main__':
     grid_size = 100
@@ -61,17 +61,20 @@ if __name__ == '__main__':
     x,y,r = Pos(3, 3)
     s = Shape(canvas, (x,y))
 
+    x,y,r = Pos(1,3)
+    c = Round(canvas, (x,y), 100, 'red')
+
     print '1'
     import time
-    time.sleep(5)
+    time.sleep(1)
 
 
     print '2'
-    s.move(0,-50)
-
-    time.sleep(5)
+    s.move(0,50)
+    s.paint('red')
+    #time.sleep(5)
     
-#    g.mainloop()
+    g.mainloop()
 
 
 
