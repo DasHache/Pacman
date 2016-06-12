@@ -36,9 +36,9 @@ class Shape():
         
 class Round(Shape) :
 
-    def __init__(self,canvas,pos,size,color):
+    def __init__(self,canvas,pos,size_,color):
         Shape.__init__(self,canvas ,pos)
-        self.size=size
+        self.size=size_
         self.color=color
         self.__draw__()
 
