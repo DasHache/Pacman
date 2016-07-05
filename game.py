@@ -9,12 +9,18 @@ class GameStateData:
     def initialize(self, layout):
         self.layout = layout
 
+
+
 class GameState:
     def __init__(self):
         self.data = GameStateData()
 
     def initialize(self, layout):
         self.data.initialize(layout)
+
+
+
+
 class Game:
     def __init__(self, display):
         self.state = GameState()
@@ -23,6 +29,8 @@ class Game:
     def run(self):
         self.display.initialize(self.state.data)
         self.display.mainloop()
+
+
 
 
 class GameRules:

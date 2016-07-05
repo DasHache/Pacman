@@ -1,6 +1,6 @@
 import Tkinter
 
-DEFAULT_GRID_SIZE = 300
+DEFAULT_GRID_SIZE = 100
 
 
 class Pos(list):
