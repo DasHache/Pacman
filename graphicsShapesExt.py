@@ -1,6 +1,3 @@
-#import Tkinter
-from graphics import Graphics, Pos
-        
 class Shape():
 
     def __init__(self, canvas, pos):
@@ -13,13 +10,8 @@ class Shape():
         self.__draw__()
 
     def __draw__(self):
-        x1,y1 = self.x-self.size, self.y-self.size
-        x2,y2 = self.x+self.size, self.y+self.size
-        l1 = self.c.create_line(x1,y1,x2,y2,fill=self.color)
-        l2 = self.c.create_line(x1,y2,x2,y1,fill=self.color)
-        self.items.append(l1)
-        self.items.append(l2)
-        
+        pass
+
     def __delete__(self):
         for l in self.items:
             self.c.delete(l)
@@ -33,8 +25,11 @@ class Shape():
     def paint(self, color):
         self.color = color
         self.__draw__()
-        
-class Round(Shape) :
+
+
+
+
+class Round(Shape):
 
     def __init__(self,canvas,pos,size_,color):
         Shape.__init__(self,canvas ,pos)
@@ -43,38 +38,39 @@ class Round(Shape) :
         self.__draw__()
 
     def __draw__(self):
+        raise RuntimeError("Not implemented yet")
         x1,y1 = self.x-self.size, self.y-self.size
         x2,y2 = self.x+self.size, self.y+self.size
         c1 = self.c.create_oval(x1,y1,x2,y2,fill=self.color)
         self.items.append(c1)
 
 
-
-################################################## MAIN ###        
-if __name__ == '__main__':
-    grid_size = 100
-    rad = 0.5
-    g = Graphics()
-    canvas = g.canvas
-
-    ############################## Shape
-    x,y,r = Pos(3, 3)
-    s = Shape(canvas, (x,y))
-
-    x,y,r = Pos(1,3)
-    c = Round(canvas, (x,y), 100, 'red')
-
-    print '1'
-    import time
-    time.sleep(1)
-
-
-    print '2'
-    s.move(0,50)
-    s.paint('red')
-    #time.sleep(5)
-    
-    g.mainloop()
+#
+# ################################################## MAIN ###
+# if __name__ == '__main__':
+#     grid_size = 100
+#     rad = 0.5
+#     g = Graphics()
+#     canvas = g.canvas
+#
+#     ############################## Shape
+#     x,y,r = Pos(3, 3)
+#     s = Shape(canvas, (x,y))
+#
+#     x,y,r = Pos(1,3)
+#     c = Round(canvas, (x,y), 100, 'red')
+#
+#     print '1'
+#     import time
+#     time.sleep(1)
+#
+#
+#     print '2'
+#     s.move(0,50)
+#     s.paint('red')
+#     #time.sleep(5)
+#
+#    g.mainloop()
 
 
 

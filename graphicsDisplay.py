@@ -1,5 +1,5 @@
-from graphics import Graphics, Pos
-from graphicsShapes import *
+from graphics import *
+
 class PacmanGraphics():
 
     def __init__(self):
@@ -25,9 +25,8 @@ class PacmanGraphics():
 
     def drawWall(self, wall):
         canvas = self.graphics.canvas
-        [wx,wy] = wall
-        x,y,r = Pos(wx, wy)
-        rect = Rect(canvas, (x,y), r, 'blue')
+        [x,y] = wall
+        rect = CellRect(canvas, (x,y), 'blue', 1.0)
 
     def mainloop(self):
         self.graphics.mainloop()
