@@ -47,7 +47,8 @@ class GameRules:
         return game
 
 
-layout = Layout('layout/small.lay') #Layout('layout/big.lay')
+layout = Layout('layout/dasha.lay') #Layout('layout/big.lay')
+#layout = Layout('layout/small.lay') #Layout('layout/big.lay')
 display = PacmanGraphics()
 
 rules = GameRules()
